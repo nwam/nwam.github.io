@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+  <title>Test Plugin</title>
+  <script src="plugin.js"></script>    
+  <script>
+      var headers = { name: "Umple Code Generator", version: "1.0", description: "Generate code from .ump files" };
+      var provider = new orion.PluginProvider(headers);
+
+      var serviceImpl = { 
+          run: function(file){
+          }
+      };
+ 
+      var serviceProperties = { 
+          name: "Umple Generation",
+          key: ["u", true, true] // Ctrl+Shift+u
+      };
+
+      provider.registerService("orion.edit.command", serviceImpl, serviceProperties);
+      provider.connect();
+  </script>
+</head>
+<body></body>
+</html>
