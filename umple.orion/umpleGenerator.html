@@ -11,7 +11,7 @@
       var serviceImpl = { 
           run: function(text){
               var x = new XMLHttpRequest();
-              x.open("GET", "http://localhost:4567/UmpleGenerate", true); //TODO: the location of the Orion/UmpleCodeGenerator server
+              x.open("GET", "https://localhost:4567/UmpleGenerate.html", true); //TODO: the location of the Orion/UmpleCodeGenerator server
               x.send();
           }
       };
