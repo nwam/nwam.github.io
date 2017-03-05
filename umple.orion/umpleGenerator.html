@@ -2,14 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-  <title>Test Plugin</title>
+  <title>Umple Generator Client</title>
   <script src="plugin.js"></script>    
   <script>
-      var headers = { name: "Umple Code Generator", version: "1.0", description: "Generate code from .ump files" };
+      var headers = { name: "Umple Generator Client", version: "1.0", description: "Generate code from .ump files" };
       var provider = new orion.PluginProvider(headers);
 
       var serviceImpl = { 
-          run: function(file){
+          run: function(text){
+              var x = new XMLHttpRequest();
+              x.open("POST", "http://localhost:4567/UmpleGenerate"); //TODO: the location of the Orion/UmpleCodeGenerator server
+              x.send("some data");
           }
       };
  
