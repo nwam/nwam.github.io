@@ -27,7 +27,7 @@ var umpleGenerateProperties= {
   key: ["u", true, true], // Ctrl+Shift+u
   tooltip: "Generate code from your Textual Umple Model",
   img: "umple.ico",
-  contentType = ["text/umple"]
+  contentType: ["text/umple"]
 };
 
 provider.registerService("orion.edit.command", umpleGenerate, umpleGenerateProperties);
