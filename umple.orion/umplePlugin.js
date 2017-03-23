@@ -22,7 +22,7 @@ var umpleGenerate = {
   }
 };
 
-var umpleGenerateProperties= { 
+var umpleGenerateProperties = { 
   name: "Umple Generate",
   key: ["u", true, true], // Ctrl+Shift+u
   tooltip: "Generate code from your Textual Umple Model",
@@ -40,11 +40,13 @@ provider.registerService("orion.core.contenttype", {}, {
       id: "text/umple",
       name: "Textual Umple Model",
       extension: ["ump"],
-      "extends": "text/plain" // extends must be a string as it is otherwise reserved in Javascript
+      "extends": "text/plain", // extends must be a string as it is otherwise reserved in Javascript
+      image: "umple.ico"
     }
   ]
 });
 
+/* Umple syntax hilighting service */
 // Adds a grammar for highlighting code and keywords in Umple models
 provider.registerService("orion.edit.highlighter", {}, {
   id: "orion.umple",
@@ -70,7 +72,7 @@ provider.registerService("orion.edit.highlighter", {}, {
       match: "\\b(?:class|interface|namespace|external|generate|strictness|association|trait|depend|use|isA|lazy|immutable|const|settable|internal|autounique|defaulted|before|after|Integer|Float|String|Double|Boolean|Date|Time|->|--|entry|do|exit|singleton|trace|tracer)\\b"
     },
 
-    // For extra code, straight import for now like in UmpleOnline.
+    // For non-umple code embedded in umple files
     { include: "orion.java" },
     { include: "orion.cpp" },
     { include: "orion.php" }
