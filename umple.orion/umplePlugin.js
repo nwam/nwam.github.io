@@ -1,9 +1,9 @@
 // Location of the umple server
-var umpleServerURL = "http://localhost:4567/UmpleGenerate";
+var umpleGenerationServerURL = "http://localhost:4567/UmpleGenerate";
 
 // Location of this file on the web
 var thisFile = location.protocol + '//' + location.host + location.pathname;
-var pwd = thisFile.substring(0, thisFile.lastIndexOf("/"));
+var pwd = thisFile.substring(0, thisFile.lastIndexOf("/") + 1);
 
 // Service provider for Orion
 var provider = new orion.PluginProvider({ 
@@ -24,7 +24,7 @@ function umpleGenerate(language) {
 
           // build and send the request
           var x = new XMLHttpRequest();
-          x.open("POST", umpleGenerateServerURL, true);               
+          x.open("POST", umpleGenerationServerURL, true);               
           x.send(request);
       }
   }
@@ -43,10 +43,10 @@ provider.registerService("orion.edit.command",
     }
 );
 
-/* Umple java generate service */
-/* Umple php generate service */
-/* Umple cpprt generate service */
-/* Umple ruby generate service */
+/* Umple Java generate service */
+/* Umple Php generate service */
+/* Umple RTCpp generate service */
+/* Umple Ruby generate service */
 
 /* Umple content type service */
 // Adds a new content type that recognizes Umple textual models
