@@ -1,36 +1,52 @@
+// Location of the umple server
+var umpleServerURL = "http://localhost:4567/UmpleGenerate";
+
+// Location of this file on the web
+var thisFile = location.protocol + '//' + location.host + location.pathname;
+var pwd = thisFile.substring(0, thisFile.lastIndexOf("/"));
+
+// Service provider for Orion
 var provider = new orion.PluginProvider({ 
     name: "Umple Plugin", 
     version: "1.0", 
     description: "Tools to support Umple developemnt" 
 });
 
-/* Umple code generation service */
-// adds the ability to generate files from Umple code
-var umpleGenerate = { 
-  execute: function(editorContext, options){
+// Request umple server to generate files in language
+// Helper for all umple generation services
+function umpleGenerate(language) { 
+  return {
+      language: language,
+      execute: function(editorContext, options){
 
-      // TODO: the location of the Orion/UmpleCodeGenerator server
-      var umpleGenerateServerURL = "http://localhost:4567/UmpleGenerate";
+          // request format is <language>\n<filename>
+          var request = this.language + '\n' + options.input;
 
-      // request is the currently selected file
-      var request = options.input;
-
-      // build and send the request
-      var x = new XMLHttpRequest();
-      x.open("POST", umpleGenerateServerURL, true);               
-      x.send(request);
+          // build and send the request
+          var x = new XMLHttpRequest();
+          x.open("POST", umpleGenerateServerURL, true);               
+          x.send(request);
+      }
   }
 };
 
-var umpleGenerateProperties = { 
-  name: "Umple Generate",
-  key: ["u", true, true], // Ctrl+Shift+u
-  tooltip: "Generate code from your Textual Umple Model",
-  img: "umple.ico",
-  contentType: ["text/umple"]
-};
 
-provider.registerService("orion.edit.command", umpleGenerate, umpleGenerateProperties);
+/* Umple generic generate service */
+provider.registerService("orion.edit.command", 
+    umpleGenerate(""),
+    { 
+      name: "Umple Generate",
+      key: ["u", true, true], // Ctrl+Shift+u
+      tooltip: "Generate code from your Textual Umple Model",
+      img: pwd + "umple.ico",
+      contentType: ["text/umple"]
+    }
+);
+
+/* Umple java generate service */
+/* Umple php generate service */
+/* Umple cpprt generate service */
+/* Umple ruby generate service */
 
 /* Umple content type service */
 // Adds a new content type that recognizes Umple textual models
@@ -41,7 +57,7 @@ provider.registerService("orion.core.contenttype", {}, {
       name: "Textual Umple Model",
       extension: ["ump"],
       "extends": "text/plain", // extends must be a string as it is otherwise reserved in Javascript
-      image: "umple.ico"
+      image: pwd + "umple.ico"
     }
   ]
 });
