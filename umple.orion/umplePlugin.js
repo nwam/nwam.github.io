@@ -1,4 +1,4 @@
-// Location of the umple server
+// Location of the Umple server
 var umpleGenerationServerURL = "http://localhost:4567/UmpleGenerate";
 
 // Location of this file on the web
@@ -11,6 +11,10 @@ var provider = new orion.PluginProvider({
     version: "1.0", 
     description: "Tools to support Umple developemnt" 
 });
+
+//================================
+// Generation Services
+//================================
 
 // Request umple server to generate files in language
 // Helper for all umple generation services
@@ -30,13 +34,11 @@ function umpleGenerate(language) {
   }
 };
 
-
 /* Umple generic generate service */
 provider.registerService("orion.edit.command", 
     umpleGenerate(""),
     { 
       name: "Umple Generate",
-      key: ["u", true, true], // Ctrl+Shift+u
       tooltip: "Generate code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
@@ -44,9 +46,52 @@ provider.registerService("orion.edit.command",
 );
 
 /* Umple Java generate service */
+provider.registerService("orion.edit.command", 
+    umpleGenerate("Java"),
+    { 
+      name: "Generate Java",
+      tooltip: "Generate Java code from your Textual Umple Model",
+      img: pwd + "umple.ico",
+      contentType: ["text/umple"]
+    }
+);
+
 /* Umple Php generate service */
+provider.registerService("orion.edit.command", 
+    umpleGenerate("Php"),
+    { 
+      name: "Generate PHP",
+      tooltip: "Generate PHP code from your Textual Umple Model",
+      img: pwd + "umple.ico",
+      contentType: ["text/umple"]
+    }
+);
+
 /* Umple RTCpp generate service */
+provider.registerService("orion.edit.command", 
+    umpleGenerate("RTCpp"),
+    { 
+      name: "Generate RTC++",
+      tooltip: "Generate RTC++ code from your Textual Umple Model",
+      img: pwd + "umple.ico",
+      contentType: ["text/umple"]
+    }
+);
+
 /* Umple Ruby generate service */
+provider.registerService("orion.edit.command", 
+    umpleGenerate("Ruby"),
+    { 
+      name: "Generate Ruby",
+      tooltip: "Generate Ruby code from your Textual Umple Model",
+      img: pwd + "umple.ico",
+      contentType: ["text/umple"]
+    }
+);
+
+//================================
+// Content Type Services
+//================================
 
 /* Umple content type service */
 // Adds a new content type that recognizes Umple textual models
