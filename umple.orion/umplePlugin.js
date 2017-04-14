@@ -38,7 +38,7 @@ function umpleGenerate(language) {
 provider.registerService("orion.edit.command", 
     umpleGenerate(""),
     { 
-      name: "Umple Generate",
+      name: "[Umple] Generate",
       tooltip: "Generate code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
@@ -49,7 +49,7 @@ provider.registerService("orion.edit.command",
 provider.registerService("orion.edit.command", 
     umpleGenerate("Java"),
     { 
-      name: "Generate Java",
+      name: "[Umple] Generate Java",
       tooltip: "Generate Java code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
@@ -60,7 +60,7 @@ provider.registerService("orion.edit.command",
 provider.registerService("orion.edit.command", 
     umpleGenerate("Php"),
     { 
-      name: "Generate PHP",
+      name: "[Umple] Generate PHP",
       tooltip: "Generate PHP code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
@@ -71,7 +71,7 @@ provider.registerService("orion.edit.command",
 provider.registerService("orion.edit.command", 
     umpleGenerate("RTCpp"),
     { 
-      name: "Generate RTC++",
+      name: "[Umple] Generate RTC++",
       tooltip: "Generate RTC++ code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
@@ -82,7 +82,7 @@ provider.registerService("orion.edit.command",
 provider.registerService("orion.edit.command", 
     umpleGenerate("Ruby"),
     { 
-      name: "Generate Ruby",
+      name: "[Umple] Generate Ruby",
       tooltip: "Generate Ruby code from your Textual Umple Model",
       img: pwd + "umple.ico",
       contentType: ["text/umple"]
