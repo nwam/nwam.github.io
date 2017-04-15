@@ -41,7 +41,7 @@ provider.registerService("orion.edit.command",
       name: "[Umple] Generate",
       tooltip: "Generate code from your Textual Umple Model",
       img: pwd + "umple.ico",
-      key : ["u", true]
+      key : ["u", true],
       contentType: ["text/umple"]
     }
 );
