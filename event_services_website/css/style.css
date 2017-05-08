@@ -1,0 +1,134 @@
+:root {
+  --lmain-color:#DFD;
+  --dmain-color:#121;
+
+  --llaccent-color:#c9ff99 ; 
+  --laccent-color:#a0ff4d;
+  --accent-color:#92ff33;
+  --daccent-color:#479900;
+  --ddaccent-color:#244d00;
+
+  --main-font:"Lato";
+}
+
+/***BG***/
+body {
+  background-image:url(../img/bg.png);
+  
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed;
+}
+
+/***NAVBAR***/
+#navbar-custom {
+  background:transparent;
+  border:0;
+  border-radius: 0;
+}
+
+#navbar-custom a {
+  font-size: 18px;
+  color: black;
+  font-family:var(--main-font);
+  background:rgba(201,255,153,0.2);
+}
+
+#navbar-custom a:hover {
+  background:rgba(201,255,153,0.5);
+}
+
+#navbar-custom .active a {
+  background:var(--llaccent-color);
+} 
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/***LAYOUT***/
+#flex-container {
+  display: flex; 
+  flex-flow: row;
+  overflow: auto;
+}
+
+.flex-item {
+  flex: 0 1 auto;
+  margin: auto;
+}
+
+#content-wrapper {
+  order:2;
+  flex: 0 0 90%;
+  max-width: 1100px;
+
+  font-size: 18px;
+}
+
+#left-space {
+  order:1;
+  flex: 1 10 50%;
+
+}
+
+#right-space {
+  order:3;
+  flex: 1 10 50%;
+
+}
+
+/***Design***/
+.card {
+  padding: 18px 56px;
+  background: rgba(231,255,211, 1);
+}
+
+.card-title {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.divider {
+  height: 24px;
+  background: rgba(0,0,0,0.75);
+}
+
+.divider-last {
+  height: 24px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 0 0 5vmin 5vmin;
+  margin-bottom: 24px;
+}
+
+#title-card {
+  text-align:center;
+  font-family: var(--main-font);
+  color:var(--accent-color);
+  font-size: 10vmin;
+
+  background-color:rgba(0,0,0,0.8);
+  border-radius: 5vmin 5vmin 0 0;
+
+  padding:3%;
+}
+
+.title-card-info {
+  font-size: 12px;
+  color: var(--lmain-color);
+}

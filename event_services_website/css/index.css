@@ -1,0 +1,33 @@
+/***TITLE-AREA***/
+#title-area {
+    text-align:center;
+    font-family: var(--main-font);
+    color:var(--accent-color);
+    font-size: 10vmin;
+
+    background-color:rgba(0,0,0,0.8);
+    border-radius: 2.5vmin 5vmin;
+
+    padding:3%;
+}
+
+#flex-title-container {
+  display: flex; 
+  flex-flow: row;
+  overflow: auto;
+  margin-top:12%;
+}
+
+
+#title {
+   display:inline-block; 
+   padding:2%
+}
+
+#title-area-info {
+    font-size: 12px;
+    color: var(--lmain-color);
+
+    margin-top: 1vmin;
+    padding-bottom: 3%
+}

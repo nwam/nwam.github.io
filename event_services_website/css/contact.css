@@ -1,0 +1,35 @@
+.input-title {
+    font-size: 14px;
+    margin: 3px;
+}
+
+.input-subtitle {
+    font-size: 12px;
+    margin: 6px;
+}
+
+#last-name {
+    margin-top: 4px;
+}
+
+.input-group {
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+
+.btn {
+    background: #ACA;
+    border-radius: 0;
+    padding: 12px;
+}
+
+.btn:hover {
+    background: #8A8;
+}
+
+#contact_form {
+    background-image: url("../img/mail.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 175vmin;
+}

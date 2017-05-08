@@ -1,0 +1,17 @@
+#fruitjuice {
+    background-image: url("../img/fruitjuice2.png");
+    background-repeat: repeat-y;
+    background-position: right top;
+    background-size: 100vmin;
+}
+
+#coffee {
+    background-image: url("../img/coffee.png");
+    background-repeat: repeat-y;
+    background-position: right top;
+    background-size: 100vmin;
+}
+
+#fruitjuice-icon {
+    display:inline-block;
+}
